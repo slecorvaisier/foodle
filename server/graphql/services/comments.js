@@ -11,10 +11,20 @@ const getComments = () => {
   return new Promise((resolve, reject) => resolve(fakeComments));
 }
 
+const getCommentById = (id) => {
+  return new Promise((resolve, reject) => {
+    return resolve(fakeComments.find(c => c.id === id));
+  });
+}
+
 const getCommentsByRecipeId = (recipeId) => {
   return new Promise((resolve, reject) => {
     return resolve(fakeComments.filter(c => c.recipeId === recipeId));
-  })
+  });
 }
 
-export default { getComments, getCommentsByRecipeId };
+export default {
+  getComments,
+  getCommentById,
+  getCommentsByRecipeId
+};

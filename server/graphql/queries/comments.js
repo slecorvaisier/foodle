@@ -1,7 +1,7 @@
 import {
-  GraphQLString,
   GraphQLList,
   GraphQLNonNull,
+  GraphQLInt,
 } from 'graphql';
 
 import commentType     from '../types/comment';
@@ -12,6 +12,17 @@ export default {
     type: new GraphQLList(commentType),
     resolve: () => {
       return commentsService.getComments();
+    }
+  },
+  comment: {
+    type: commentType,
+    args: {
+      id: {
+        type: new GraphQLNonNull(GraphQLInt),
+      },
+    },
+    resolve: (_, {id}) => {
+      return commentsService.getCommentById(id);
     }
   }
 }
