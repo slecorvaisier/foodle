@@ -23,8 +23,21 @@ const getCommentsByRecipeId = (recipeId) => {
   });
 }
 
+const updateText = (id, text) => {
+  return new Promise((resolve, reject) => {
+    fakeComments.forEach(comment => {
+      if (comment.id === id) {
+        comment.text = text;
+        return resolve(comment);
+      }
+    });
+    return reject('no comment found');
+  })
+}
+
 export default {
   getComments,
   getCommentById,
-  getCommentsByRecipeId
+  getCommentsByRecipeId,
+  updateText
 };

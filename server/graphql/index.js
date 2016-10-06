@@ -3,12 +3,16 @@ import {
   GraphQLObjectType,
 } from 'graphql';
 
-import queries from './queries';
+import queries    from './queries';
+import mutations  from './mutations';
 
 export default new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'query',
-    description: 'Recipe query',
-    fields: queries
-  })
+    fields: queries,
+  }),
+  mutation: new GraphQLObjectType({
+    name: 'mutation',
+    fields: mutations,
+  }),
 });

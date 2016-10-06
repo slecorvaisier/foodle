@@ -19,10 +19,12 @@ $ npm install
 $ node index.js
 ````
 
-GraphiQL: 
+GraphiQL:
 <http://localhost:8080>
 
 the input takes a graphQL request as following:
+
+query
 ```
 {
   recipes(search: "sushi") {
@@ -36,13 +38,23 @@ the input takes a graphQL request as following:
   }
 }
 
-{
+query {
   comments {
     author
     text
     recipe {
       title
     }
+  }
+}
+````
+
+mutations
+````
+mutation {
+  updateCommentText(id: 2, text: "i forgot") {
+  	author
+    text
   }
 }
 ````
