@@ -10,14 +10,24 @@ Client side coming soon.
 $ git clone --depth=1 https://github.com/slecorvaisier/foodle myapp
 $ cd myapp
 $ git remote rm origin
+```
+
+Then in Stand-alone
+```bash
+# move to server folder
 $ cd server
 
-# Install NPM dependencies
+# install NPM dependencies
 $ npm install
 
 # start app in dev mode
 $ node index.js
-````
+```
+
+Or via Docker
+```bash
+docker-compose up
+```
 
 GraphiQL:
 <http://localhost:8080>
@@ -57,6 +67,6 @@ mutation {
     text
   }
 }
-````
+```
 
 cf graphiql doc for more information
