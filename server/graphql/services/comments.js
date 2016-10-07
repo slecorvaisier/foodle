@@ -7,21 +7,11 @@ let fakeComments = [
   { id: 4, recipeId: 42350,  author: 'Hodor',  text: 'Hodor... Hooodooooor.' },
 ];
 
-const getComments = () => {
-  return new Promise((resolve, reject) => resolve(fakeComments));
-}
+const getComments = () => Promise((resolve, reject) => resolve(fakeComments));
 
-const getCommentById = (id) => {
-  return new Promise((resolve, reject) => {
-    return resolve(fakeComments.find(c => c.id === id));
-  });
-}
+const getCommentById = id => Promise.resolve(fakeComments.find(c => c.id === id));
 
-const getCommentsByRecipeId = (recipeId) => {
-  return new Promise((resolve, reject) => {
-    return resolve(fakeComments.filter(c => c.recipeId === recipeId));
-  });
-}
+const getCommentsByRecipeId = recipeId => Promise.resolve(fakeComments.filter(c => c.recipeId === recipeId));
 
 const updateText = (id, text) => {
   return new Promise((resolve, reject) => {
