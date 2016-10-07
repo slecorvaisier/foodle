@@ -1,0 +1,10 @@
+version: '2'
+services:
+  graphql-server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./server:/app
