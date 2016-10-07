@@ -1,5 +1,5 @@
 # foodle
-experiment on graphQL
+Experiment on GraphQL. Get recipes from a food API.
 
 Client side coming soon.
 
