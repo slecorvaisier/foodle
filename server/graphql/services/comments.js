@@ -7,7 +7,7 @@ let fakeComments = [
   { id: 4, recipeId: 42350,  author: 'Hodor',  text: 'Hodor... Hooodooooor.' },
 ];
 
-const getComments = () => Promise((resolve, reject) => resolve(fakeComments));
+const getComments = () => Promise.resolve(fakeComments);
 
 const getCommentById = id => Promise.resolve(fakeComments.find(c => c.id === id));
 
